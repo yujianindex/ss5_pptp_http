@@ -9,8 +9,8 @@ RUN apk add --no-cache iptables wget bash tzdata && \
     echo "Asia/Shanghai" > /etc/timezone && \
 	apk del tzdata
 
-COPY --from=buildenv ./data/3proxy /bin/
-COPY --from=buildenv ./data/*.ld.so /usr/local/3proxy/libexec/
+COPY ./data/3proxy /bin/
+COPY ./data/*.ld.so /usr/local/3proxy/libexec/
 
 RUN mkdir /usr/local/3proxy/logs &&\
     mkdir /usr/local/3proxy/conf &&\
