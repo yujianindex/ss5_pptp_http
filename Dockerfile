@@ -18,6 +18,6 @@ RUN mkdir -p /usr/local/3proxy/logs &&\
     mkdir -p /usr/local/3proxy/traf &&\
     chmod +x   /bin/3proxy &&\
     chmod -R 755 /usr/local/3proxy/libexec &&\
-    chown -R root /usr/local/3proxy/libexec &&
+    chown -R root /usr/local/3proxy/libexec 
 
 CMD syslogd -n -O /dev/stdout
