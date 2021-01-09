@@ -12,12 +12,9 @@ RUN apk add --no-cache iptables wget bash tzdata && \
 COPY ./data/3proxy /bin/
 COPY ./data/*.ld.so /usr/local/3proxy/libexec/
 
-RUN mkdir -p /usr/local/3proxy/logs &&\
-    mkdir -p /usr/local/3proxy/conf &&\
-    mkdir -p /usr/local/3proxy/limit &&\
-    mkdir -p /usr/local/3proxy/traf &&\
+RUN mkdir -p /usr/local/3proxy/conf &&\
     chmod +x   /bin/3proxy &&\
     chmod -R 755 /usr/local/3proxy/libexec &&\
-    chown -R root /usr/local/3proxy/libexec 
+    chown -R root /usr/local/3proxy/libexec
 
 CMD syslogd -n -O /dev/stdout
